@@ -38,6 +38,11 @@
   }
 }
 
+.certpdf {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 @media (max-width: 991px) {
   .u-section-1 .u-text-1 {
     margin-left: 0;
