@@ -6,7 +6,7 @@ fetch('https://api.ipify.org?format=json')
 	msg="IP "+ip+"\nUser agent "+agent+"\nDate "+new Date().toLocaleString()+"\n";
 	console.log(msg);
 
-	fetch('http://ip-api.com/json/'+ip)
+	fetch('https://ipwho.is/'+ip)
 	.then(response => response.json())
 	.then(data => {
 
