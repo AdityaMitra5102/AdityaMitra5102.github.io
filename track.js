@@ -3,7 +3,7 @@ fetch('https://api.ipify.org?format=json')
     .then(data => {
 	ip=data.ip;
 	agent= navigator.userAgent;
-	msg="IP "+ip+"\nUser agent "+agent+"\nDate "+new Date().toLocaleString()+"\nReferrer "+document.referrer+"\n";
+	msg="IP "+ip+"\nUser agent "+agent+"\nDate "+new Date().toLocaleString()+"\nTitle "+document.title+"\nReferrer "+document.referrer+"\n";
 	console.log(msg);
 
 	fetch('https://ipwho.is/'+ip)
