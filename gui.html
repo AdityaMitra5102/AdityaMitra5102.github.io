@@ -34,6 +34,15 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
+<script>
+  // Call closeGui() from anything on this page (a button, a key handler, etc.)
+  function closeGui() {
+    if (window.parent === window) return; // not inside the portfolio iframe
+    var origin = window.location.origin === 'null' ? '*' : window.location.origin;
+    window.parent.postMessage({ type: 'cryptane:close-gui' }, origin);
+  }
+
+</script>
 
 <title>Aditya Mitra</title>
 
@@ -6299,6 +6308,7 @@ if (error.checked) {
 error.setAttribute("checked", "");
 if (retry) retry.focus();
 if (name == "blue-screen") {
+closeGui();
 document.addEventListener("keydown", e => {
 if (e.key === "Enter" && error.checked) {
 error.checked = false;
